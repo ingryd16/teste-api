@@ -11,15 +11,15 @@ card.classList.add('card')
 
 const name = document.createElement('h2')
 name.classList.add('card__name')
-name.textContent = dados.razao_social;
+name.textContent = dados.nome;
 
 const description = document.createElement('p')
 description.classList.add('card__biography')
-description.textContent = dados.cnpj;
+description.textContent = dados.descricao;
 
-const email = document.createElement('p')
-email.classList.add('card__img')
-email.textContent = dados.email;
+const img = document.createElement('img')
+img.classList.add('card__img')
+img.src = dados.imagem;
 
 // const price = document.createElement('p')
 // price.classList.add('card__price')
@@ -34,7 +34,7 @@ return card
 export const carregarProduct = async () => {
 
 const container = document.getElementById('container-collections')
-const cards =  dados.map(cardProduct)
+const cards =  dados.produtos(cardProduct)
 container.append(...cards)
 }
 
